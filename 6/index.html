@@ -14,9 +14,36 @@ ocuparemos el click derecho.
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Click derecho y alerta</title>
   </head>
+  <style media="screen">
+    .activa{
+      font-size: 21px;
+    }
+  </style>
   <body>
+  <h1>Bloquear/desbloquear click derecho</h1>
+  <p>
+    Bloqueado, gg
+  </p>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script type="text/javascript">
+    //$("p").on()
+
+    $("h1").on("click", function(){
+      $("p").toggleClass("activa")
+      $(".activa").css("color","green").text("Desbloqueado :o");
+      $(".activa").mousedown(function(event) {
+      switch (event.which) {
+          case 3:
+              alert('Lo hiciste! buena');
+
+          }
+      });
+    })
+
+
+  </script>
   </body>
 </html>
