@@ -1,12 +1,13 @@
 <!-- Sin modificar el HTML debes escribir los selectores que se necesitan
 para cada elemento pedido -->
 
-<!-- Seleccionar el H1 y cambiar el color de text a rojo-->
-<!-- Seleccionar la sección 1 (section-1) y agregar el color de fondo amarillo -->
-<!-- Seleccionar el elemennto con clase counter e incrementar en 10 su valor -->
-<!-- Seleccionar el elemento con id row-3 y agregar el color de fondo gris, agregar una transición de 1 segundos -->
-<!-- Seleccionar el h1 dentro del div y duplicar su tamaño -->
-<!-- Seleccionar el último row dentro de la tabla (sin utilizar el id, puesto que el número de elementos podría cambiar) y agregar color de fondo rojo -->
+<!-- + Seleccionar el H1 y cambiar el color de text a rojo-->
+<!-- + Seleccionar la sección 1 (section-1) y agregar el color de fondo amarillo -->
+<!-- + Seleccionar el elemennto con clase counter e incrementar en 10 su valor -->
+<!-- + Seleccionar el elemento con id row-3 y agregar el color de fondo gris, agregar una transición de 1 segundos -->
+<!-- + Seleccionar el h1 dentro del div y duplicar su tamaño -->
+<!-- Seleccionar el último row dentro de la tabla (sin utilizar el id, puesto que el número de elementos podría cambiar)
+y agregar color de fondo rojo -->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -14,6 +15,12 @@ para cada elemento pedido -->
     <meta charset="utf-8">
     <title></title>
   </head>
+  <style media="screen">
+    .gris{
+        background-color: grey;
+        transition: 1s;
+    }
+  </style>
   <body>
     <h1> Hey !! </h1>
     <section class="section-1">
@@ -61,5 +68,24 @@ para cada elemento pedido -->
 
       </fieldset>
     </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript">
+      $("h1").css("color","red");
+
+      $(".section-1").css("background", "yellow");
+
+      numero = $(".counter").text()
+      numero = parseInt(numero)
+      $(".counter").text(numero + 10);
+
+      $("#row-3").toggleClass("gris").delay(3000);
+
+      porte = $(".section-1").children("h1").height();
+      console.log(porte)
+      $(".section-1").children("h1").css("font-size", porte*2);
+
+      $( "tbody tr:last-child" ).css("background", "red")
+    </script>
   </body>
 </html>
