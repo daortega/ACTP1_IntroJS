@@ -15,5 +15,12 @@ Mostrar una alerta cada vez que se haga clic sobre un párrafo
     <p> clic !! </p>
     <h3> no clic !! </h3>
     <p> clic !! </p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript">
+      $("p").on("click", function(){
+        alert("Hiciste un click!")
+      })
+    </script>
   </body>
 </html>
